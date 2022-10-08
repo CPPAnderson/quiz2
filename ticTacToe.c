@@ -151,7 +151,35 @@ void validInput(){
     }
 }
 // A construct that returns true if the game is over with a winner.
-
+bool endGame(){
+    if (a1 == a2 && a2 == a3){
+        return true;
+    }
+    else if (b1 == b2 && b2 == b3){
+        return true;
+    }
+    else if (c1 == c2 && c2 == c3){
+        return true;
+    }
+    else if (a1 == b2 && b2 == c3){
+        return true;
+    }
+    else if (a3 == b2 && b2 == c1){
+        return true;
+    }
+    else if (a1 == b1 && b1 == c1){
+        return true;
+    }
+    else if (a2 == b2 && b2 == c2){
+        return true;
+    }
+    else if (a3 == b3 && b3 == c3){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 // a construct that generates a random number
 
 // a construct that makes sure the computer is making valid moves
