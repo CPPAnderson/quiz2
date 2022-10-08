@@ -113,7 +113,13 @@ void slotTaken(){
 
 }
 // if player enters a x and y value that is out of range of the board, this construct should ask him to re-enter there x and y
-
+void invalidInput(){
+        printf("You have entered invalid cordinates. Enter x: ");
+        scanf("%d", &x);
+        printf("Enter y: "); 
+        scanf("%d", &y);
+        gameIntegrity();
+}
 // A construct that changes letters on the board
 
 // A construct that returns true if the game is over with a winner.
