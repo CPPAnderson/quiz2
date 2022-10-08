@@ -104,7 +104,14 @@ bool gameIntegrity(){
 }
 
 // if player chooses a slot that is already taken, program ask the player to re-enter for a new spot.
+void slotTaken(){
+    printf("Slot is already taken. Enter x: ");
+    scanf("%d", &x);
+    printf("Enter y: ");
+    scanf("%d", &y);
+    gameIntegrity();
 
+}
 // if player enters a x and y value that is out of range of the board, this construct should ask him to re-enter there x and y
 
 // A construct that changes letters on the board
