@@ -5,7 +5,10 @@
 #include <time.h> 
 
 // all global variables that will be needed for the TTT program
-
+char a1 = ' ', a2 = ' ', a3 = ' ', b1 = ' ', b2 = ' ', b3 = ' ', c1 = ' ', c2 = ' ', c3 = ' ';
+char letter = 'X';
+int y, x, cx, cy;
+time_t t;
 // a contruct that first clears the screen of previous code and then print out the TTT board
 
 // a contruct that makes sure that the spot the player is trying to move to has not been already taken or also with range
