@@ -4,11 +4,14 @@
 #include <stdlib.h> 
 #include <time.h> 
 
-// all global variables that will be needed for the TTT program
+// all variables that will be needed for the TTT program
 char a1 = ' ', a2 = ' ', a3 = ' ', b1 = ' ', b2 = ' ', b3 = ' ', c1 = ' ', c2 = ' ', c3 = ' ';
 char letter = 'X';
 int y, x, cx, cy;
 time_t t;
+
+void slotTaken();
+void invalidInput();
 // a contruct that first clears the screen of previous code and then print out the TTT board
 void printScreen(){
     system("cls");
@@ -22,7 +25,6 @@ void printScreen(){
     printf("  +-----------+ \n");
 
 }
-
 // a contruct that makes sure that the spot the player is trying to move to has not been already taken or also with range
 bool gameIntegrity(){
     printf("%d %d\n", x, y);
@@ -102,7 +104,6 @@ bool gameIntegrity(){
         invalidInput();
     }
 }
-
 // if player chooses a slot that is already taken, program ask the player to re-enter for a new spot.
 void slotTaken(){
     printf("Slot is already taken. Enter x: ");
@@ -253,18 +254,66 @@ void computer(){
         }
     }
 }
+
 int main(){
 
+    int option; 
+    int rounds;
+    srand((unsigned) time(&t)); 
     //prompt user for game they wish to play 
+    printf("Welcome to Tic Tac Toe! \n");
+    printf("Press 1 for player vs player \n");
+    printf("Press 2 for player vs computer \n");
+    scanf("%d", &option);
     
-    switch(){
+    switch(option){
         case (1):
             //player vs player
             while (true){
                 
                 // asks player 1 for there X and Y 
+                printScreen();
+                printf("Player 1 its your move...\n" );
+                printf("enter x value: ");
+                scanf("%d", &x);
+                printf("\n");
+                printf("enter y value: ");
+                scanf("%d", &y);
+                printf("\n");
+                letter = 'X';
+                printf("%d %d\n", x, y);
+                if (gameIntegrity() == true){
+                    validInput();
+                }
 
                 // asks player 2 for there x and y
+                letter = 'O';
+                printScreen();
+                printf("Player 2 its your move...\n" );
+                printf("enter x value: ");
+                scanf("%d", &x);
+                printf("\n");
+                printf("enter y value: ");
+                scanf("%d", &y);
+                printf("\n");
+                if (gameIntegrity() == true){
+                    printf("%d %d\n", x, y);
+                    validInput();
+                }
+                rounds++;
+                if (rounds >= 3){
+                    if (endGame() == true){
+                        printScreen();
+                        printf("We have a winner!!!");
+                        return 0;
+                    }
+                }
+                if (rounds == 4){
+                    printf("the game has ended in a tie");
+                    return 0;
+                }
+                
+
             }
             break;
         case (2):
@@ -272,11 +321,40 @@ int main(){
             while (true){ 
 
                 //asks player for there x and y
+                printScreen();
+                letter = 'X';
+                printf("player enter your x value: ");
+                scanf("%d", &x);
+                printf("\n");
+                printf("enter y value: ");
+                scanf("%d", &y);
+                printf("\n");
+                if (gameIntegrity() == true){
+                    validInput();
+                }
 
                 // code for computers side
+                letter = 'O';
+                cx = random();
+                cy = random();
+                computer();
+                x = cx;
+                y = cy;
+                validInput();
+                rounds++;
+                if (rounds >= 3){
+                    if (endGame() == true){
+                        printScreen();
+                        printf("We have a winner!!!");
+                        return 0;
+                    }
+                }
+                if (rounds == 4){
 
+                    printf("the game has ended in a tie");
+                    return 0;
+                }
             }
-            break;
     }
 
     return 0;
