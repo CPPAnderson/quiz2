@@ -24,6 +24,84 @@ void printScreen(){
 }
 
 // a contruct that makes sure that the spot the player is trying to move to has not been already taken or also with range
+bool gameIntegrity(){
+    printf("%d %d\n", x, y);
+    if ((x == 1) && (y == 1)){
+        if(a1 != ' '){
+            slotTaken();
+        }
+        else{
+            return true;
+        }
+    }
+    else if ((x == 1) && (y == 2)){
+        if(a2 != ' '){
+            slotTaken();
+        }
+        else{
+            return true;
+        }
+    }
+    else if (x == 1 && y == 3){
+        if(a3 != ' '){
+            slotTaken();
+        }
+        else{
+            return true;
+        }
+    }
+    else if (x == 2 && y == 1){
+        if(b1 != ' '){
+            slotTaken();
+        }
+        else{
+            return true;
+        }
+    }
+    else if (x == 2 && y == 2){
+        if(b2 != ' '){
+            slotTaken();
+        }
+        else{
+            return true;
+        }
+    }
+    else if (x == 2 && y == 3){
+        if(b3 != ' '){
+            slotTaken();
+        }
+        else{
+            return true;
+        }
+    }
+    else if (x == 3 && y == 1){
+        if(c1 != ' '){
+            slotTaken();
+        }
+        else{
+            return true;
+        }
+    }
+    else if (x == 3 && y == 2){
+        if(c2 != ' '){
+            slotTaken();
+        }
+        else{
+            return true;
+        }
+    }
+    else if (x == 3 && y == 3){
+        if(c3 != ' '){
+            slotTaken();
+        }
+        else{
+            return true;
+        }
+    }
+    else{
+        invalidInput();
+    }
+}
 
 // if player chooses a slot that is already taken, program ask the player to re-enter for a new spot.
 
