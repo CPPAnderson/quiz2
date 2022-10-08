@@ -181,7 +181,11 @@ bool endGame(){
     }
 }
 // a construct that generates a random number
-
+int random(){
+    int num;
+    num = (rand() % 3) + 1;
+    return num;
+}
 // a construct that makes sure the computer is making valid moves
 
 int main(){
