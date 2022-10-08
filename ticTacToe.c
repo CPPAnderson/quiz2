@@ -187,7 +187,72 @@ int random(){
     return num;
 }
 // a construct that makes sure the computer is making valid moves
-
+void computer(){
+    
+    if ((cx == 1) && (cy == 1)){
+        if(a1 != ' '){
+            cx = random();
+            cy = random();
+            computer();
+        }
+    }
+    else if ((cx == 1) && (cy == 2)){
+        if(a2 != ' '){
+            cx = random();
+            cy = random();
+            computer();
+        }
+    }
+    else if ((cx == 1) && (cy == 3)){
+        if(a3 != ' '){
+            cx = random();
+            cy = random();
+            computer();
+        }
+    }
+    else if ((cx == 2) && (cy == 1)){
+        if(b1 != ' '){
+            cx = random();
+            cy = random();
+            computer();
+        }
+    }
+    else if ((cx == 2) && (cy == 2)){
+        if(b2 != ' '){
+            cx = random();
+            cy = random();
+            computer();
+        }
+    }
+    else if ((cx == 2) && (cy == 3)){
+        if(b3 != ' '){
+            cx = random();
+            cy = random();
+            computer();
+        }
+    }
+    else if ((cx == 3) && (cy == 1)){
+        if(c1 != ' '){
+            cx = random();
+            cy = random();
+            computer();
+        }
+    }
+    else if ((cx == 3) && (cy == 2)){
+        if(c2 != ' '){
+            cx = random();
+            cy = random();
+            computer();
+        }
+    }
+    else if ((cx == 3) && (cy == 3)){
+        if(c3 != ' '){
+            cx = random();
+            cy = random();
+            computer();
+        }
+    }
+}
 int main(){
 
     //prompt user for game they wish to play 
