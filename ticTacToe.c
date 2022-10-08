@@ -121,7 +121,35 @@ void invalidInput(){
         gameIntegrity();
 }
 // A construct that changes letters on the board
-
+void validInput(){
+    if ((x == 1) && (y == 1)){
+        a1 = letter;
+    }
+    else if ((x == 1) && (y == 2)){
+        a2 = letter;
+    }
+    else if (x == 1 && y == 3){
+        a3 = letter;
+    }
+    else if (x == 2 && y == 1){
+        b1 = letter;
+    }
+    else if (x == 2 && y == 2){
+        b2 = letter;
+    }
+    else if (x == 2 && y == 3){
+        b3 = letter;
+    }
+    if (x == 3 && y == 1){
+        c1 = letter;
+    }
+    else if (x == 3 && y == 2){
+        c2 = letter;
+    }
+    else if (x == 3 && y == 3){
+        c3 = letter;
+    }
+}
 // A construct that returns true if the game is over with a winner.
 
 // a construct that generates a random number
